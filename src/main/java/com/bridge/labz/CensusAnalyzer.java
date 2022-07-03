@@ -1,9 +1,5 @@
 package com.bridge.labz;
 
-//import com.opencsv.bean.CsvToBean;
-//
-
-
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
@@ -19,13 +15,11 @@ public class CensusAnalyzer {
 
             Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));
 
-
             CsvToBeanBuilder<IndiaCensusCSV> csvToBeanBuilder = new CsvToBeanBuilder<IndiaCensusCSV>(
                     reader);
             csvToBeanBuilder.withType(IndiaCensusCSV.class);
             csvToBeanBuilder.withIgnoreLeadingWhiteSpace(true);
             CsvToBean<IndiaCensusCSV> csvToBean = csvToBeanBuilder.build();
-
 
             Iterator<IndiaCensusCSV> censusCSVIterator = csvToBean.iterator();
             int numberOfEntries = 0;
