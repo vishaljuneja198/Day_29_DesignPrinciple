@@ -39,4 +39,17 @@ public class IndianStateCensusAnalyserTest {
         }
     }
 
+
+
+    @Test
+    public void givenIndianCensusDataCSVFile_whenWithWrongFileType_shouldThrowException() {
+        CensusAnalyzer censusAnalyser = new CensusAnalyzer();
+        ExpectedException exceptionRule = ExpectedException.none();
+        exceptionRule.expect(CensusAnalyserException.class);
+        try {
+            censusAnalyser.loadIndiaCensusData(WRONG_CSV_FILE_TYPE_PATH);
+        } catch (CensusAnalyserException e) {
+            Assert.assertNotSame(CensusAnalyserException.ExceptionType.INVALID_FILE_TYPE_OR_DELIMITER_OR_HEADER, e.type);
+        }
+    }
 }
