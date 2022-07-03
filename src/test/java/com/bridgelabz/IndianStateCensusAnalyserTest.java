@@ -52,4 +52,20 @@ public class IndianStateCensusAnalyserTest {
             Assert.assertNotSame(CensusAnalyserException.ExceptionType.INVALID_FILE_TYPE_OR_DELIMITER_OR_HEADER, e.type);
         }
     }
+
+    @Test
+    public void givenIndianCensusDataCSVFile_whenWithWrongDelimiters_shouldThrowException()
+    {
+        CensusAnalyzer censusAnalyser = new CensusAnalyzer();
+        ExpectedException exceptionRule =  ExpectedException.none();
+        exceptionRule.expect(CensusAnalyserException.class);
+        try
+        {
+            censusAnalyser.loadIndiaCensusData(INVALID_DELIMITER_FILE_PATH);
+        }
+        catch (CensusAnalyserException e)
+        {
+            Assertions.assertNotSame(CensusAnalyserException.ExceptionType.INVALID_FILE_TYPE_OR_DELIMITER_OR_HEADER, e.type);
+        }
+    }
 }
