@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 public class IndianStateCensusAnalyserTest {
 
-    private static final String INDIA_CENSUS_CSV_FILE_PATH= "D:\\GitProgram\\Day29\\src\\main\\resources\\IndianStateCensusData.csv";
+    private static final String INDIA_CENSUS_CSV_FILE_PATH= "E:\classRoom\Day_29_Indian_State\Day_29_Indian_State\src\main\resources\IndiaStateCensusData.csv";
 
 
 
