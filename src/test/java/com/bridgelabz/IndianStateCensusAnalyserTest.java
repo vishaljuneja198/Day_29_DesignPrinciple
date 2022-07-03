@@ -60,6 +60,9 @@ public class IndianStateCensusAnalyserTest {
         ExpectedException exceptionRule =  ExpectedException.none();
         exceptionRule.expect(CensusAnalyserException.class);
         try
+
+
+                
         {
             censusAnalyser.loadIndiaCensusData(INVALID_DELIMITER_FILE_PATH);
         }
